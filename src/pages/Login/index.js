@@ -23,7 +23,6 @@ function Login() {
         authorization: accessToken,
       },
       data: {
-        name,
         email,
       },
     });

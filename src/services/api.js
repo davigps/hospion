@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from './auth';
 
 const api = axios.create({
-  baseURL: process.env.BACKEND_URL,
+  baseURL: 'https://hospion.herokuapp.com/',
 });
 
 api.interceptors.request.use(async (config) => {
