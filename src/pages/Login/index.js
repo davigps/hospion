@@ -20,7 +20,7 @@ function Login() {
       method: 'POST',
       url: `/auth?by=${media}`,
       headers: {
-        accessToken,
+        authorization: accessToken,
       },
       data: {
         email,
@@ -42,7 +42,6 @@ function Login() {
   const handleFacebook = ({
     accessToken, name, email, picture,
   }) => {
-    console.log(accessToken);
     handleSocialMedia('facebook', accessToken, name, email, picture.data.url);
   };
 

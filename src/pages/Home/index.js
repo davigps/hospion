@@ -1,10 +1,9 @@
 import React from 'react';
-import { Parallax } from 'react-materialize';
+import { Parallax, Icon } from 'react-materialize';
 import i18n from 'i18next';
 
 import './styles.css';
 import hospital from '../../assets/hospital.jpg';
-import noname from '../../assets/noname.png';
 
 function Home() {
   return (
@@ -17,7 +16,6 @@ function Home() {
       >
         <div className="hospion-home-slogan-container">
           <p className="hospion-home-slogan">{i18n.t('homeSlogan')}</p>
-          <img src={noname} alt="HospiOn" />
         </div>
       </Parallax>
       <div className="container">

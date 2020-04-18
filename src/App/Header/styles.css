@@ -14,3 +14,21 @@ nav.hospion-header-background div ul li  a {
 nav.hospion-header-background div a {
   color: #006633;
 }
+
+div.modal-lang > .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+div.idioms-buttons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+div.idioms-buttons > button {
+  text-align: center;
+}
