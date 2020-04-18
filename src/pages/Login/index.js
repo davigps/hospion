@@ -20,7 +20,7 @@ function Login() {
       method: 'POST',
       url: `/auth?by=${media}`,
       headers: {
-        authorization: accessToken,
+        accessToken,
       },
       data: {
         email,
@@ -42,11 +42,14 @@ function Login() {
   const handleFacebook = ({
     accessToken, name, email, picture,
   }) => {
+    console.log(accessToken);
     handleSocialMedia('facebook', accessToken, name, email, picture.data.url);
   };
 
-  const handleGoogle = ({ accessToken, Qt }) => {
-    const { Ad: name, zu: email, jL: picture } = Qt;
+  const handleGoogle = (response) => {
+    console.log(response);
+    const { accessToken, Pt } = response;
+    const { Ad: name, yu: email, fL: picture } = Pt;
 
     handleSocialMedia('google', accessToken, name, email, picture);
   };
