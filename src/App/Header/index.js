@@ -39,6 +39,7 @@ function Header() {
     >
       <NavItem>{i18n.t('seeMap')}</NavItem>
       <NavItem>{i18n.t('seeOrders')}</NavItem>
+      <NavItem>{i18n.t('oldOrders')}</NavItem>
       <NavItem>{i18n.t('aboutUs')}</NavItem>
       <NavItem>
         <Button

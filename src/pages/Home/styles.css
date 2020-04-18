@@ -1,3 +1,32 @@
 .background-image {
   filter: blur(7px);
 }
+
+.hospion-home-slogan-container {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding: 2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+.hospion-home-slogan-container img {
+  margin: 0 0 1rem 1rem;
+  height: 30%;
+}
+
+div.parallax-container {
+  height: 45vh;
+  background-size: cover;
+}
+
+.hospion-home-slogan {
+  font-size: 2rem;
+  color: white;
+  font-weight: bolder;
+}
+
+.hospion-home-text {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
