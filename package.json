@@ -9,10 +9,12 @@
     "i18next": "^19.4.2",
     "i18next-browser-languagedetector": "^4.1.1",
     "i18next-xhr-backend": "^3.2.2",
+    "materialize-css": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.3.4",
+    "react-materialize": "^3.8.5",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },
