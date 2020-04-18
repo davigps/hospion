@@ -37,14 +37,13 @@ function Header() {
         preventScrolling: true,
       }}
     >
-      <NavItem>{i18n.t('seeMap')}</NavItem>
       <NavItem>{i18n.t('seeOrders')}</NavItem>
       <NavItem>{i18n.t('oldOrders')}</NavItem>
       <NavItem>{i18n.t('aboutUs')}</NavItem>
       <NavItem>
         <Button
           className="green darken-3"
-          onClick={() => history.push('/signup')}
+          onClick={() => history.push('/login')}
         >
           {i18n.t('beDonator')}
         </Button>

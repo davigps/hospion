@@ -5,12 +5,14 @@ import {
 
 import App from './App';
 import Home from './pages/Home';
+import Login from './pages/Login';
 
 const Routes = () => (
   <BrowserRouter>
     <App>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
       </Switch>
     </App>
   </BrowserRouter>

@@ -1,10 +1,19 @@
 {
   "changeLang": "Mudar o Idioma",
-  "seeMap": "Mapa",
   "aboutUs": "Sobre Nós",
-  "oldOrders": "Histórico de Pedidos",
+  "oldOrders": "Doações Realizadas",
   "seeOrders": "Pedidos de Doações",
   "beDonator": "Seja um Doador",
+
+  "homeSlogan": "O que é o HospiOn?",
   "homeBio": "A HospiOn é uma plataforma online para viabilizar a interação entre Doadores e Entidades de Saúde para que as doações sejam distribuídas de maneira eficiente, atendendo melhor às demandas e auxiliando no combate à pandemia.",
-  "homeSlogan": "Viabilizando a Solidariedade"
+
+  "loginTitle": "Entre com a sua conta.",
+  "loginAboutButton": "O que é o HospiOn?",
+  "loginFormTitle": "Escolha sua forma de login",
+  "loginFormDesc": "Nós exibiremos o seu nome e e-mail.",
+  "loginFacebook": "Fazer login com o Facebook",
+  "loginGoogle": "Fazer login com o Google",
+
+  "copyrights": "©2020 Todos os direitos reservados | HospiOn."
 }

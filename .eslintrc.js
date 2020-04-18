@@ -23,6 +23,7 @@ module.exports = {
   ],
   rules: {
     "react/jsx-filename-extension": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-param-reassign": "off",
   },
 };
