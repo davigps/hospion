@@ -1,5 +1,6 @@
 import React from 'react';
 import { Parallax } from 'react-materialize';
+// eslint-disable-next-line no-unused-vars
 import i18n from 'i18next';
 
 import './styles.css';
