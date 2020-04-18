@@ -3,6 +3,8 @@ import { Navbar, NavItem, Icon } from 'react-materialize';
 import { useHistory, Link } from 'react-router-dom';
 import i18n from 'i18next';
 
+import './styles.css';
+import logo from '../../assets/headerLogo.png';
 
 function Header() {
   const history = useHistory();
@@ -17,12 +19,12 @@ function Header() {
     <Navbar
       alignLinks="right"
       brand={(
-        <Link className="brand-logo" href="/">
-          Logo
+        <Link className="brand-logo hospion-header" href="/">
+          <img src={logo} alt="HospiOn" className="responsive-img hospion-header" />
         </Link>
       )}
       id="mobile-nav"
-      className="grey darken-1"
+      className="white darken-4 hospion-header-background"
       menuIcon={<Icon>menu</Icon>}
       options={{
         draggable: true,

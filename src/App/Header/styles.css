@@ -1,0 +1,12 @@
+.hospion-header {
+  height: 100%;
+  padding: 0.6rem;
+}
+
+img.hospion-header {
+  height: 100%;
+}
+
+nav.hospion-header-background div ul li  a {
+  color: #006633;
+}
