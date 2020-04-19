@@ -5,7 +5,6 @@ import { Container, TextInput, Button } from 'react-materialize';
 import './styles.css';
 
 import api from '../../services/api';
-import { login } from '../../services/auth';
 
 function SignupPj() {
   const history = useHistory();
@@ -16,7 +15,7 @@ function SignupPj() {
   const [password, setPasword] = useState('');
 
   const handleSignup = async () => {
-    const response = await api({
+    await api({
       method: 'POST',
       url: '/auth?by=cnpj',
       data: {
@@ -27,15 +26,8 @@ function SignupPj() {
       },
     });
 
-    const { token } = response.data;
-    const user = {
-      cnpj, name, email, password,
-    };
-
-    localStorage.clear();
-    login(token, user);
-
-    history.push('/');
+    console.log(cnpj, name, email, password);
+    // history.push('/login-pj');
   };
 
   return (

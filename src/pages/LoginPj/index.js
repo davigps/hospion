@@ -13,7 +13,9 @@ function LoginPj() {
   const [email, setEmail] = useState('');
   const [password, setPasword] = useState('');
 
-  const handleSignup = async () => {
+  const handleLogin = async () => {
+    localStorage.clear();
+
     const response = await api({
       method: 'POST',
       url: '/login',
@@ -26,9 +28,9 @@ function LoginPj() {
     const { token } = response.data;
     const user = {
       email,
+      type: 'pj',
     };
 
-    localStorage.clear();
     login(token, user);
 
     history.push('/');
@@ -54,8 +56,8 @@ function LoginPj() {
         type="password"
       />
       <div className="row pj-buttons">
-        <Button className="green darken-3" onClick={handleSignup}>Fazer LogIn</Button>
-        <Button className="green darken-4" onClick={() => history.push('/signup-pj')}>Criar uma conta para usa Empresa</Button>
+        <Button className="green darken-3" onClick={handleLogin}>Fazer LogIn</Button>
+        <Button className="green darken-4" onClick={() => history.push('/signup-pj')}>Criar uma conta para sua Empresa</Button>
       </div>
     </Container>
   );

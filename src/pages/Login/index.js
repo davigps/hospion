@@ -17,6 +17,8 @@ function Login() {
   const history = useHistory();
 
   const handleSocialMedia = async (media, accessToken, name, email, picture) => {
+    localStorage.clear();
+
     const response = await api({
       method: 'POST',
       url: `/auth?by=${media}`,
@@ -35,7 +37,6 @@ function Login() {
     };
     const { token } = response.data;
 
-    localStorage.clear();
     login(token, user);
 
     history.push('/');
@@ -49,6 +50,7 @@ function Login() {
 
   const handleGoogle = (response) => {
     const { accessToken, Pt } = response;
+    console.log('GOOGLE', accessToken);
     const { Ad: name, yu: email, fL: picture } = Pt;
 
     handleSocialMedia('google', accessToken, name, email, picture);

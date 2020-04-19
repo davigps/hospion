@@ -30,28 +30,23 @@
     margin-top: 8vh;
   }
   
-  div.ongs-call img {
-    width: 100%;
-    max-height: 680px;
+  div.content-ongs-call {
+    max-height: 300px;
   }
   
-  div.ongs-call h3 {
+  div.content-ongs-call h3 {
     width: 50%;
-    position: relative;
     margin-left: 3.5vw;
     font-weight: bolder;
     font-size: 6vw;
-    bottom: 40vh;
     color: white
   }
   
-  div.ongs-call button {
-    position: relative;
+  div.ongs-call .content-ongs-call button {
     margin-left: 3.5vw;
-    bottom: 38vh;
     font-size: 3vw;
     line-height: 3vh;
-    width: 40%;
+    max-width: 40%;
     height: 3.5rem;
   }
 }
