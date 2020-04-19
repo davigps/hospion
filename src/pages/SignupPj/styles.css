@@ -1,0 +1,11 @@
+div.signup-pj-form {
+  min-height: 90vh;
+}
+
+div.signup-pj-form > button {
+  margin: 7vh 0;
+}
+
+div.input-field {
+  margin-top: 4rem;
+}

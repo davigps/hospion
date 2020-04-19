@@ -1,17 +1,20 @@
 import axios from 'axios';
-import { getToken } from './auth';
+import { getToken, isAuthenticated } from './auth';
 
 const api = axios.create({
   baseURL: 'https://hospion.herokuapp.com/',
 });
 
 api.interceptors.request.use(async (config) => {
-  const token = getToken();
+  if (isAuthenticated()) {
+    const token = getToken();
 
-  if (token) {
-    config.headers.authorization = `Bearer ${token}`;
+    if (token) {
+      config.headers.authorization = `Bearer ${token}`;
+    }
+
+    return config;
   }
-
   return config;
 });
 

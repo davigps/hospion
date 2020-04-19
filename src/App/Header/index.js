@@ -65,7 +65,7 @@ function Header() {
         open={modal}
         className="modal-lang"
       >
-        <div className="row idioms-buttons">
+        <div className="idioms-buttons">
           <div style={{ marginLeft: '5rem' }}>
             <Button className="green darken-4" onClick={() => changeLang('en')}>English</Button>
           </div>

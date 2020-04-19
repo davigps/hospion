@@ -6,6 +6,7 @@ import {
 import App from './App';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import SignupPj from './pages/SignupPj';
 
 const Routes = () => (
   <BrowserRouter>
@@ -13,6 +14,7 @@ const Routes = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
+        <Route path="/pj" component={SignupPj} />
       </Switch>
     </App>
   </BrowserRouter>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-materialize';
 import i18n from 'i18next';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -34,6 +35,7 @@ function Login() {
     };
     const { token } = response.data;
 
+    localStorage.clear();
     login(token, user);
 
     history.push('/');
@@ -60,13 +62,19 @@ function Login() {
         <button
           type="button"
           className="login-about"
-          onClick={() => history.push('/about')}
+          onClick={() => history.push('/')}
         >
           {i18n.t('loginAboutButton')}
         </button>
       </div>
 
       <div className="social-area">
+        <div className="other-signups">
+          <Button className="green darken-3" onClick={() => history.push('/pj')}>
+            Empresa? Clique aqui
+          </Button>
+        </div>
+
         <div className="login-info">
           <h2>{i18n.t('loginFormTitle')}</h2>
           <p>{i18n.t('loginFormDesc')}</p>
