@@ -4,3 +4,15 @@
   align-items: center;
   justify-content: center;
 }
+
+.profile-avatar {
+  margin-top: 7vh;
+}
+
+.profile-infos {
+  margin-top: 7vh;
+}
+
+.profile-logout {
+  margin: 7vh 0;
+}

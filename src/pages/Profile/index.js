@@ -14,9 +14,9 @@ function Profile() {
   const user = getUser();
 
   const userInfos = [
-    { header: '', icon: '', content: '' },
-    { header: '', icon: '', content: '' },
-    { header: '', icon: '', content: '' },
+    { header: 'Seu nome.', icon: 'person', content: user.name },
+    { header: 'O Nome.', icon: 'business', content: user.namePj },
+    { header: 'Seu e-mail para contato.', icon: 'email', content: user.email },
   ];
 
   const history = useHistory();
@@ -38,39 +38,34 @@ function Profile() {
         popout
         className="profile-infos"
       >
-        <CollapsibleItem
-          expanded={false}
-          header="Better safe than sorry. That's my motto."
-          icon={<Icon>filter_drama</Icon>}
-          node="div"
-        >
-          Better safe than sorry. That's my motto.
-        </CollapsibleItem>
-        <CollapsibleItem
-          expanded={false}
-          header="Yeah, you do seem to have a little 'shit creek' action going."
-          icon={<Icon>place</Icon>}
-          node="div"
-        >
-          Yeah, you do seem to have a little 'shit creek' action going.
-        </CollapsibleItem>
-        <CollapsibleItem
-          expanded={false}
-          header="You know, FYI, you can buy a paddle. Did you not plan for this contingency?"
-          icon={<Icon>whatshot</Icon>}
-          node="div"
-        >
-          You know, FYI, you can buy a paddle. Did you not plan for this contingency?
-        </CollapsibleItem>
+        {
+          userInfos.map((info) => (
+            info.content
+              ? (
+                <CollapsibleItem
+                  expanded={false}
+                  header={info.header}
+                  icon={<Icon>{info.icon}</Icon>}
+                  node="div"
+                  key={info.icon}
+                >
+                  {info.content}
+                </CollapsibleItem>
+              )
+              : ''
+          ))
+        }
       </Collapsible>
 
-      <Button onClick={() => {
-        logout();
-        localStorage.clear();
-        history.push('/');
-      }}
+      <Button
+        onClick={() => {
+          logout();
+          localStorage.clear();
+          history.push('/');
+        }}
+        className="red profile-logout"
       >
-        Sair
+        Encerrar Sessão
 
       </Button>
     </Container>

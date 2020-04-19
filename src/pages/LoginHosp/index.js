@@ -25,9 +25,10 @@ function LoginPj() {
       },
     });
 
-    const { token } = response.data;
+    const { token, name } = response.data;
     const user = {
       email,
+      namePj: name,
       type: 'hp',
     };
 
