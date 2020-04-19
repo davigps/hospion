@@ -31,10 +31,79 @@ div.hospion-home-slogan > i {
   margin-right: 8vw;
 }
 
+
 .actual-order {
-  margin-top: 5rem;
+  color: #006633;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3vw;
+}
+
+.actual-order > h3 {
+  margin-bottom: 3vw;
+}
+
+.actual-order .card {
+  color: #006633;
+}
+
+.actual-order .card .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actual-order .card .card-content > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .actual-order button {
-  float: right;
+  margin-top: 6vw;
+  max-width: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+  div.actual-order button {
+    float: none;
+  }
+  
+  #root > div > div > div.actual-order > div > div.card-content > div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  div.actual-order button {
+    margin-top: 10vw;
+  }
+}
+    
+.adress {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.adress h2 {
+  color: white;
+}
+
+.adress-background {
+  margin: 2vw 0;
+  padding: 10vw 13vw;
+  background: #006633;
+}
+
+.adress-title {
+  display: flex;
+}
+
+.adress-title i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: 4vw;
 }

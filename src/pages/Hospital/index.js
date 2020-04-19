@@ -81,7 +81,7 @@ class Hospital extends Component {
         ? (
           name
             ? (
-              <Container>
+              <div>
                 <Parallax
                   image={<img alt="hospital" className="background-image" src={hospitalImg} />}
                   options={{
@@ -96,12 +96,23 @@ class Hospital extends Component {
                   </div>
                 </Parallax>
 
-                <Row>
-                  <Col
-                    m={6}
-                    s={12}
-                  >
-                    <h2>Endereço</h2>
+                <div className="actual-order">
+                  <h3>Essa foi a sua ajuda selecionada.</h3>
+                  <Card title={orderTitle}>
+                    {orderDesc}
+                    <Button className="green darken-4">
+                      Doar
+                    </Button>
+                  </Card>
+                </div>
+
+                <section className="adress-background">
+
+                  <div className="adress">
+                    <div className="adress-title">
+                      <Icon large>map</Icon>
+                      <h2>Onde os encontrar?</h2>
+                    </div>
                     <Collection>
                       <CollectionItem>
                         Estado:
@@ -119,22 +130,15 @@ class Hospital extends Component {
                         {street}
                       </CollectionItem>
                     </Collection>
-                  </Col>
-                </Row>
+                  </div>
+                </section>
+
 
                 <Divider />
 
-                <div className="actual-order">
-                  <h3>Pedido Selecionado</h3>
-                  <Card title={orderTitle}>
-                    {orderDesc}
-                    <Button className="green darken-4">
-                      Doar
-                    </Button>
-                  </Card>
-                </div>
+                <div className="other-orders" />
 
-              </Container>
+              </div>
             )
             : <ProgressBar />
         )

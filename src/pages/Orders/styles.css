@@ -18,6 +18,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  background: linear-gradient(to right, #33CC33 0%,#006633 100% );
+  -webkit-box-shadow: 0px 10px 42px -13px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 42px -13px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 42px -13px rgba(0,0,0,0.75);
 }
 
 .orders-title h3 {

@@ -108,7 +108,7 @@ function Login() {
 
         <div className="other-signups">
           <Link className="green-text text-darken-3" to="/login-pj">
-            Empresa? Clique aqui
+            Empresa? Entre aqui
           </Link>
         </div>
       </div>

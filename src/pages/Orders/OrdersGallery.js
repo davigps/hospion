@@ -32,7 +32,7 @@ function OrderCard({ order }) {
         <Button
           key="1"
           onClick={() => history.push(`/hospital?id=${order.hospitalID}&orderId=${order.id}`)}
-          className="white-text light-green accent-4 darken-4"
+          className="white-text green darken-3"
         >
           Saber mais
         </Button>,
