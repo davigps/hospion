@@ -38,12 +38,14 @@
 
 @media only screen and (max-width: 768px) {
   .profile-container {
+    align-items: center;
     padding: 0;
     margin: 0;
     width: 100%;
   }
 
   .profile-section {
+    padding: 0;
     margin: 0;
     border: none;
     width: 100%;

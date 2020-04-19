@@ -51,7 +51,6 @@ function Profile() {
         url: '/getAllHospital',
       });
       const hospitals = response.data;
-      console.log(hospitals);
       let hospitalId;
       for (let i = 0; i < hospitals.length; i++) {
         if (user.namePj === hospitals[i].nome) { hospitalId = hospitals[i].id; }
@@ -79,13 +78,12 @@ function Profile() {
         });
       }
       setOrders(orderItens);
-      console.log(orders);
     })();
   }, []);
 
   return (
     <Container className="center profile-container">
-      <div className="profile-section" style={{ padding: '2vw' }}>
+      <div className="profile-section">
 
         <div className="profile-avatar">
           {
@@ -151,7 +149,7 @@ function Profile() {
                 </div>
               </Container>
 
-              <section className="others-background profile-section" style={{ padding: '3vw' }}>
+              <section className="others-background profile-section">
                 <div className="actual-order">
                   <h3>
                     Todos os seus pedidos
@@ -166,7 +164,7 @@ function Profile() {
                 }}
                 className="green darken-4 profile-logout"
               >
-                Canal de comunicação para confirmar recebimento de doações
+                Confirmar recebimento de doações
 
               </Button>
 
