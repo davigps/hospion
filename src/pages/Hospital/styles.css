@@ -24,8 +24,13 @@ div.hospion-home-slogan {
   display: flex;
 }
 
+div.hospion-home-slogan > h1 {
+  font-size: 4vw;
+}
+
 div.hospion-home-slogan > i {
   display: flex;
+  font-size: 4vw;
   align-items: center;
   justify-content: center;
   margin-right: 8vw;
@@ -125,5 +130,18 @@ div.hospion-home-slogan > i {
 
   div.actual-order > h3 {
     font-size: 6vw;
+  }
+
+  div.hospion-home-slogan > p {
+    font-size: 8vw;
+    font-weight: bolder !important;
+  }
+  
+  div.hospion-home-slogan > i {
+    display: flex;
+    font-size: 8vw;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8vw;
   }
 }

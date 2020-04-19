@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
-  Container, Icon, Divider, ProgressBar,
-  Row, Col, Collection, CollectionItem,
+  Icon, Divider, ProgressBar,
+  Collection, CollectionItem,
   Parallax, Card, Button,
 } from 'react-materialize';
 import { Redirect } from 'react-router-dom';
@@ -77,7 +77,6 @@ class Hospital extends Component {
 
       const { orders, orderItens } = this.state;
 
-      console.log('is', orders);
       for (let i = 0; i < orders.length; i++) {
         const id = orders[i];
         allOrders.map((item) => {
@@ -100,8 +99,6 @@ class Hospital extends Component {
       name, city, uf, street, orderItens, orderTitle, orderDesc,
     } = this.state;
 
-    console.log(orderItens);
-
     return (
       isAuthenticated()
         ? (
@@ -117,7 +114,7 @@ class Hospital extends Component {
                   <div className="hospion-home-slogan-container">
                     <div className="hospion-home-slogan">
                       <Icon large>business</Icon>
-                      <h1>{name}</h1>
+                      <p>{name}</p>
                     </div>
                   </div>
                 </Parallax>
@@ -185,7 +182,7 @@ class Hospital extends Component {
 
               </div>
             )
-            : <ProgressBar />
+            : <ProgressBar style={{ margin: 'auto 0' }} />
         )
         : (<Redirect to="/login" />)
     );

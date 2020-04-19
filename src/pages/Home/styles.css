@@ -1,9 +1,5 @@
 @import './style-mobile.css';
 
-.background-image {
-  filter: blur(7px);
-}
-
 .hospion-home-slogan-container {
   display: flex;
   flex-direction: column;
@@ -87,8 +83,8 @@ div.parallax-container {
 }
 
 .ongs-call .content-ongs-call button {
-  margin-left: 3.5vw;
+  margin-left: 8.5%;
   font-size: 1.6vw;
-  width: 30rem;
+  width: 40%;
   height: 5rem;
 }

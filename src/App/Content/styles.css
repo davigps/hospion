@@ -2,3 +2,7 @@
   max-width: 1920px !important;
   margin: 0 auto;
 }
+
+div.content-ongs-call > h3 {
+  text-align: center;
+}

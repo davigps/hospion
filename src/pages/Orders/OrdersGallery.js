@@ -47,8 +47,6 @@ function OrderCard({ order }) {
         <br />
         <br />
         <strong>
-          Instituição:
-          {' '}
           {hospital.nome}
         </strong>
       </p>

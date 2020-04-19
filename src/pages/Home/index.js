@@ -13,7 +13,7 @@ function Home() {
   return (
     <div>
       <Parallax
-        image={<img alt="hospital" className="background-image" src={hospital} />}
+        image={<img alt="hospital" src={hospital} />}
         options={{
           responsiveThreshold: 600,
         }}
@@ -43,6 +43,7 @@ function Home() {
           <Button
             className="white green-text text-darken-4"
             waves="green"
+            onClick={() => window.open('https://forms.gle/VL3VWn5dp4aoEPyB6')}
           >
             Inscreva-se no nosso programa
           </Button>
