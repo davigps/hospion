@@ -7,12 +7,15 @@ import 'materialize-css';
 import i18nConfig from '../config/i18n';
 
 import Header from './Header';
+import Content from './Content';
 import FooterDiv from './Footer';
 
 const App = ({ children }) => (
   <I18nextProvider i18n={i18nConfig}>
     <Header />
-    { children }
+    <Content>
+      { children }
+    </Content>
     <FooterDiv />
   </I18nextProvider>
 );

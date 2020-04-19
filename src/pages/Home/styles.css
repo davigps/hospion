@@ -7,7 +7,7 @@
 .hospion-home-slogan-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   height: 100%;
   padding: 2rem;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
@@ -36,6 +36,7 @@ div.parallax-container {
 }
 
 .hospion-home-text {
+  text-align: center;
   margin-top: 3rem;
   font-size: 1.5rem;
 }
