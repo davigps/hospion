@@ -56,22 +56,7 @@ function OrderCard({ order }) {
   );
 }
 
-function OrdersGallery() {
-  const [orders, setOrders] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const response = await api({
-        method: 'GET',
-        url: '/getAllOrders',
-      });
-
-      setOrders(response.data);
-    })();
-
-    return () => setOrders([]);
-  }, []);
-
+function OrdersGallery({ orders }) {
   return (
     <>
       {

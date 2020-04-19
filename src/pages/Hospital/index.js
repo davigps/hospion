@@ -9,6 +9,8 @@ import { Redirect } from 'react-router-dom';
 import api from '../../services/api';
 import { isAuthenticated } from '../../services/auth';
 
+import OrdersGallery from '../Orders/OrdersGallery';
+
 import hospitalImg from '../../assets/hospital.jpg';
 import './styles.css';
 
@@ -28,6 +30,7 @@ class Hospital extends Component {
       uf: '',
       street: '',
       orders: [],
+      orderItens: [],
       orderTitle: '',
       orderDesc: '',
     };
@@ -64,17 +67,40 @@ class Hospital extends Component {
         orderDesc: descricao,
       });
     };
+
+    this.getOrders = async () => {
+      const response = await api({
+        method: 'GET',
+        url: '/getAllOrders/',
+      });
+      const allOrders = response.data;
+
+      const { orders, orderItens } = this.state;
+
+      console.log('is', orders);
+      for (let i = 0; i < orders.length; i++) {
+        const id = orders[i];
+        allOrders.map((item) => {
+          if (item.id === id) orderItens.push(item);
+          return item;
+        });
+      }
+      this.setState({ orderItens });
+    };
   }
 
   componentDidMount() {
     this.getInformation();
     this.getOrder();
+    this.getOrders();
   }
 
   render() {
     const {
-      name, city, uf, street, orders, orderTitle, orderDesc,
+      name, city, uf, street, orderItens, orderTitle, orderDesc,
     } = this.state;
+
+    console.log(orderItens);
 
     return (
       isAuthenticated()
@@ -105,6 +131,25 @@ class Hospital extends Component {
                     </Button>
                   </Card>
                 </div>
+
+                <Divider />
+
+                {
+                  orderItens.length > 1
+                    ? (
+                      <section className="others-background">
+                        <div className="actual-order">
+                          <h3>
+                            Todos os pedidos de
+                            {' '}
+                            {name}
+                          </h3>
+                          <OrdersGallery orders={orderItens} />
+                        </div>
+                      </section>
+                    )
+                    : ''
+                }
 
                 <section className="adress-background">
 
