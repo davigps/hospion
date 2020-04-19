@@ -42,7 +42,7 @@ function Home() {
           className="white green-text text-darken-4"
           waves="green"
         >
-          Se inscreva em nosso programa.
+          Inscreva-se
         </Button>
       </div>
     </div>
