@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container, Divider, Collapsible, CollapsibleItem,
-  Icon, Button, TextInput,
+  Icon, Button, TextInput, Modal,
 } from 'react-materialize';
-
 import { useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
 import { logout, getUser, getToken } from '../../services/auth';
+
+import OrdersGallery from '../Orders/OrdersGallery';
 
 import avatar from '../../assets/avatar.png';
 import './styles.css';
@@ -15,6 +16,8 @@ import './styles.css';
 function Profile() {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
+  const [modal, setModal] = useState(false);
+  const [orders, setOrders] = useState([]);
   const user = getUser();
 
   const userInfos = [
@@ -26,7 +29,7 @@ function Profile() {
   const history = useHistory();
 
   const handleOrder = async () => {
-    const response = await api({
+    await api({
       method: 'POST',
       url: '/addOrder/',
       headers: {
@@ -38,8 +41,47 @@ function Profile() {
       },
     });
 
-    console.log(response);
+    setModal(true);
   };
+
+  useEffect(() => {
+    (async () => {
+      let response = await api({
+        method: 'GET',
+        url: '/getAllHospital',
+      });
+      const hospitals = response.data;
+      console.log(hospitals);
+      let hospitalId;
+      for (let i = 0; i < hospitals.length; i++) {
+        if (user.namePj === hospitals[i].nome) { hospitalId = hospitals[i].id; }
+      }
+
+      response = await api({
+        method: 'GET',
+        url: `/hospital/${hospitalId}`,
+      });
+
+      const { pedidos } = response.data;
+
+      response = await api({
+        method: 'GET',
+        url: '/getAllOrders/',
+      });
+      const allOrders = response.data;
+
+      const orderItens = [];
+      for (let i = 0; i < pedidos.length; i++) {
+        const id = pedidos[i];
+        allOrders.map((item) => {
+          if (item.id === id) orderItens.push(item);
+          return item;
+        });
+      }
+      setOrders(orderItens);
+      console.log(orders);
+    })();
+  }, []);
 
   return (
     <Container className="center profile-container">
@@ -102,12 +144,45 @@ function Profile() {
                   icon="description"
                   className="signup-input green-text"
                   onChange={(e) => setDesc(e.target.value)}
-                  label="Descrição da problemática (tamanho, gravidade, necessidade, etc...)"
+                  label="Descrição da problemática"
                 />
                 <div className="row pj-buttons">
                   <Button className="green darken-3" onClick={handleOrder}>Adicionar novo pedido</Button>
                 </div>
               </Container>
+
+              <section className="others-background profile-section" style={{ padding: '3vw' }}>
+                <div className="actual-order">
+                  <h3>
+                    Todos os seus pedidos
+                  </h3>
+                  <OrdersGallery orders={orders} />
+                </div>
+              </section>
+
+              <Button
+                onClick={() => {
+                  window.open('https://api.whatsapp.com/send?phone=5583986665607');
+                }}
+                className="green darken-4 profile-logout"
+              >
+                Canal de comunicação para confirmar recebimento de doações
+
+              </Button>
+
+              <Modal
+                actions={[
+                  <Button flat modal="close" node="button" waves="green">Ok</Button>,
+                ]}
+                fixedFooter
+                header="Pedido Adicionado!"
+                id="Modal-0"
+                open={modal}
+              >
+                <p>
+                  Seu pedido foi Adicionado à plataforma.
+                </p>
+              </Modal>
             </>
           )
           : ''
