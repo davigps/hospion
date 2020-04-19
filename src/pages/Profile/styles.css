@@ -9,10 +9,43 @@
   margin-top: 7vh;
 }
 
+.profile-avatar img {
+  max-width: 180px;
+}
+
 .profile-infos {
-  margin-top: 7vh;
+  margin: 7vh;
 }
 
 .profile-logout {
   margin: 7vh 0;
+}
+
+.profile-section {
+  margin: 7vh 0;
+  padding: 6vw;
+  background-color: #eee;
+  border: solid 2px #ccc;
+  border-radius: 1vw;
+}
+
+.orders-form-title {
+  width: 100%;
+  color: white;
+  padding: 0.5vw 0;
+  background-color: #006633;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .profile-section {
+    margin: 0;
+    border: none;
+    width: 100%;
+  }
 }
