@@ -52,7 +52,7 @@ function Header() {
         </Button>
       </NavItem>
       <NavItem />
-      <NavItem style={{ marginLeft: '1rem' }} onClick={() => setModal(true)}>
+      <NavItem style={{ marginLeft: '1rem', display: 'none' }} onClick={() => setModal(true)}>
         <Icon tiny className="left">language</Icon>
         {i18n.t('changeLang')}
       </NavItem>

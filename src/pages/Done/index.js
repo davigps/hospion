@@ -11,7 +11,7 @@ import gustavo from '../../assets/members/Gustavo.png';
 import matheus from '../../assets/members/Matheus.png';
 
 
-function About() {
+function Done() {
   return (
     <div>
       <Parallax
@@ -83,4 +83,4 @@ function About() {
   );
 }
 
-export default About;
+export default Done;

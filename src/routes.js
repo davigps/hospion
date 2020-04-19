@@ -9,6 +9,7 @@ import { isAuthenticated } from './services/auth';
 import App from './App';
 import Home from './pages/Home';
 import About from './pages/About';
+import Done from './pages/Done';
 import Login from './pages/Login';
 import SignupPj from './pages/SignupPj';
 import LoginPj from './pages/LoginPj';
@@ -50,6 +51,7 @@ const Routes = () => (
         <Route path="/hospital" component={Hospital} />
         <Route path="/login-hospitals" component={LoginHosp} />
         <Route path="/about" component={About} />
+        <Route path="/done" component={Done} />
         <PrivateRoute path="/profile" component={Profile} />
         <Route path="/*" component={() => <h1>Página não encontrada.</h1>} />
       </Switch>
