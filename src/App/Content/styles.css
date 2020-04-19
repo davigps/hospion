@@ -1,5 +1,6 @@
 .app-content {
   max-width: 1920px !important;
+  min-height: 90vh !important;
   margin: 0 auto;
 }
 
