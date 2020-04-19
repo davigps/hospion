@@ -1,14 +1,10 @@
 import React from 'react';
 import {
-  Parallax, Row, Col, Card, Icon, CardTitle,
+  Parallax, Row, Col, Card, Icon,
 } from 'react-materialize';
 
 import './styles.css';
 import hospital from '../../assets/hospital.jpg';
-import davi from '../../assets/members/Davi.png';
-import henrique from '../../assets/members/Henrique.png';
-import gustavo from '../../assets/members/Gustavo.png';
-import matheus from '../../assets/members/Matheus.png';
 
 
 function Done() {
@@ -21,60 +17,31 @@ function Done() {
         }}
       >
         <div className="hospion-home-slogan-container">
-          <p className="hospion-home-slogan">Quem Somos?</p>
+          <p className="hospion-home-slogan">Celebre Felicidade</p>
         </div>
       </Parallax>
 
       <div className="about-members">
 
         <Row>
+          <Col m={4} />
           <Col
-            m={3}
+            m={4}
             s={12}
           >
             <Card
+              className="green darken-1"
               closeIcon={<Icon>close</Icon>}
-              header={<CardTitle image={davi}>Davi Sousa</CardTitle>}
               revealIcon={<Icon>more_vert</Icon>}
+              textClassName="white-text"
+              style={{ heigth: '100vh' }}
+              title="Doação para o Hospital da Criança"
             >
-              Desenvolvedor Frontend. Acadêmico de Ciência da Computação - UFCG.
-            </Card>
-          </Col>
-          <Col
-            m={3}
-            s={12}
-          >
-            <Card
-              closeIcon={<Icon>close</Icon>}
-              header={<CardTitle image={matheus}>Matheus Gonzaga</CardTitle>}
-              revealIcon={<Icon>more_vert</Icon>}
-            >
-              Design, Organizador e Viabilizador da Ideia. Acadêmico de Administração - UFCG.
-            </Card>
-          </Col>
-          <Col
-            m={3}
-            s={12}
-          >
-            <Card
-              closeIcon={<Icon>close</Icon>}
-              header={<CardTitle image={henrique}>Henrique Lima</CardTitle>}
-              revealIcon={<Icon>more_vert</Icon>}
-            >
-              Organizador e Viabilizador da Ideia. Acadêmico de Relações Internacionais -
-              Universidade Jaguelônica | PO.
-            </Card>
-          </Col>
-          <Col
-            m={3}
-            s={12}
-          >
-            <Card
-              closeIcon={<Icon>close</Icon>}
-              header={<CardTitle image={gustavo}>Gustavo Vilar</CardTitle>}
-              revealIcon={<Icon>more_vert</Icon>}
-            >
-              Desenvolvedor Backend. Acadêmico de Engenharia Elétrica - UFCG.
+              Doador: Anônimo
+              {' '}
+              <br />
+              <br />
+              100Kg de Aviamentos
             </Card>
           </Col>
         </Row>
