@@ -61,7 +61,8 @@ function Home() {
               header={<CardTitle image={henrique}>Henrique Lima</CardTitle>}
               revealIcon={<Icon>more_vert</Icon>}
             >
-              Organizador e Viabilizador da Ideia. Acadêmico de Relações Internacionais.
+              Organizador e Viabilizador da Ideia. Acadêmico de Relações Internacionais -
+              Universidade Jaguelônica | PO.
             </Card>
           </Col>
           <Col
