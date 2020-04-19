@@ -46,7 +46,6 @@ function Login() {
   };
 
   const handleGoogle = (response) => {
-    console.log(response);
     const { accessToken, Pt } = response;
     const { Ad: name, yu: email, fL: picture } = Pt;
 

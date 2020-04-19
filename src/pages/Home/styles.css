@@ -26,6 +26,12 @@ div.parallax-container {
   font-weight: bolder;
 }
 
+@media only screen and (max-width: 600px) {
+  .hospion-home-slogan {
+    font-size: 10vw;
+  }
+}
+
 .hospion-home-text {
   margin-top: 3rem;
   font-size: 1.5rem;

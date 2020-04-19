@@ -1,5 +1,5 @@
 import React from 'react';
-import { Parallax, Icon } from 'react-materialize';
+import { Parallax } from 'react-materialize';
 import i18n from 'i18next';
 
 import './styles.css';
@@ -11,7 +11,7 @@ function Home() {
       <Parallax
         image={<img alt="hospital" className="background-image" src={hospital} />}
         options={{
-          responsiveThreshold: 0,
+          responsiveThreshold: 600,
         }}
       >
         <div className="hospion-home-slogan-container">

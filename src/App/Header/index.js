@@ -49,7 +49,7 @@ function Header() {
           {i18n.t('beDonator')}
         </Button>
       </NavItem>
-      <NavItem divider />
+      <NavItem />
       <NavItem style={{ marginLeft: '1rem' }} onClick={() => setModal(true)}>
         <Icon tiny className="left">language</Icon>
         {i18n.t('changeLang')}
