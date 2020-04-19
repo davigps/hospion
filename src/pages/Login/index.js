@@ -70,7 +70,7 @@ function Login() {
 
       <div className="social-area">
         <div className="other-signups">
-          <Button className="green darken-3" onClick={() => history.push('/pj')}>
+          <Button className="green darken-3" onClick={() => history.push('/login-pj')}>
             Empresa? Clique aqui
           </Button>
         </div>

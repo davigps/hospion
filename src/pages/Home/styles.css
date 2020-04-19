@@ -60,6 +60,22 @@ div.parallax-container {
 
 .ongs-call {
   margin-top: 100px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-ongs-call {
+  background: url('../../assets/ongsaude.png') round;
+  max-height: 920px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ongs-call img {
@@ -69,7 +85,6 @@ div.parallax-container {
 
 .ongs-call h3 {
   width: 50%;
-  position: relative;
   margin-left: 3.5vw;
   font-weight: bolder;
   font-size: 3vw;
@@ -77,10 +92,8 @@ div.parallax-container {
   color: white
 }
 
-.ongs-call button {
-  position: relative;
+.ongs-call .content-ongs-call button {
   margin-left: 3.5vw;
-  bottom: 70vh;
   font-size: 1.6vw;
   width: 20rem;
   height: 5rem;

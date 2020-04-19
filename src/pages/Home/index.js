@@ -5,7 +5,6 @@ import i18n from 'i18next';
 import './styles.css';
 import hospital from '../../assets/hospital.jpg';
 import donation from '../../assets/donation.png';
-import ongsaude from '../../assets/ongsaude.png';
 
 function Home() {
   return (
@@ -36,14 +35,15 @@ function Home() {
       </Container>
 
       <div className="ongs-call">
-        <img src={ongsaude} alt="Instituições" className="responsive-img" />
-        <h3>É uma instituição da saúde e precisa de doação?</h3>
-        <Button
-          className="white green-text text-darken-4"
-          waves="green"
-        >
-          Inscreva-se
-        </Button>
+        <div className="content-ongs-call">
+          <h3>É uma instituição da saúde e precisa de doação?</h3>
+          <Button
+            className="white green-text text-darken-4"
+            waves="green"
+          >
+            Inscreva-se
+          </Button>
+        </div>
       </div>
     </div>
   );
