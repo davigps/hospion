@@ -61,6 +61,7 @@ function SignupPj() {
         className="signup-input"
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email para contato com a empresa"
+        type="email"
       />
       <TextInput
         id="ip4"
@@ -68,6 +69,7 @@ function SignupPj() {
         className="signup-input"
         onChange={(e) => setPasword(e.target.value)}
         placeholder="Senha"
+        type="password"
       />
       <Button className="green darken-3" onClick={handleSignup}>Confirmar e Submeter</Button>
     </Container>

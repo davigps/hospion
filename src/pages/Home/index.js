@@ -1,9 +1,11 @@
 import React from 'react';
-import { Parallax } from 'react-materialize';
+import { Parallax, Container, Button } from 'react-materialize';
 import i18n from 'i18next';
 
 import './styles.css';
 import hospital from '../../assets/hospital.jpg';
+import donation from '../../assets/donation.png';
+import ongsaude from '../../assets/ongsaude.png';
 
 function Home() {
   return (
@@ -23,7 +25,26 @@ function Home() {
           {i18n.t('homeBio')}
         </p>
       </div>
-      <div style={{ height: '1000px' }} />
+
+      <Container className="donation-section">
+        <img src={donation} alt="Donation" />
+        <div>
+          <h3>Quer fazer parte disso?</h3>
+          <p>Veja a lista de pedidos em aberto.</p>
+          <Button className="green darken-4">Ver Pedidos</Button>
+        </div>
+      </Container>
+
+      <div className="ongs-call">
+        <img src={ongsaude} alt="Instituições" className="responsive-img" />
+        <h3>É uma instituição da saúde e precisa de doação?</h3>
+        <Button
+          className="white green-text text-darken-4"
+          waves="green"
+        >
+          Se inscreva em nosso programa.
+        </Button>
+      </div>
     </div>
   );
 }

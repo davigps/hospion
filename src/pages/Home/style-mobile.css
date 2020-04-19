@@ -1,0 +1,57 @@
+@media only screen and (max-width: 768px) {
+
+  div.donation-section {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10vw;
+  }
+
+  div.donation-section > img {
+    width: 40vw;
+  }
+
+  div.donation-section > div {
+    margin: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  div.donation-section > div > h3 {
+    font-size: 9vw;
+    margin: 6vw 0 0 0;
+  }
+
+  div.donation-section > div > p {
+    font-size: 5vw;
+  }
+
+  div.ongs-call {
+    margin-top: 8vh;
+  }
+  
+  div.ongs-call img {
+    width: 100%;
+    max-height: 680px;
+  }
+  
+  div.ongs-call h3 {
+    width: 50%;
+    position: relative;
+    margin-left: 3.5vw;
+    font-weight: bolder;
+    font-size: 6vw;
+    bottom: 40vh;
+    color: white
+  }
+  
+  div.ongs-call button {
+    position: relative;
+    margin-left: 3.5vw;
+    bottom: 38vh;
+    font-size: 3vw;
+    line-height: 3vh;
+    width: 40%;
+    height: 4rem;
+  }
+}
