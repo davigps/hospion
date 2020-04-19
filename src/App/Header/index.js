@@ -5,6 +5,8 @@ import {
 import { useHistory, useLocation, Link } from 'react-router-dom';
 import i18n from 'i18next';
 
+import { isAuthenticated } from '../../services/auth';
+
 import './styles.css';
 import logo from '../../assets/headerLogo.png';
 
@@ -38,15 +40,15 @@ function Header() {
         preventScrolling: true,
       }}
     >
-      <NavItem href="/orders">{i18n.t('seeOrders')}</NavItem>
-      <NavItem href="/done">{i18n.t('oldOrders')}</NavItem>
-      <NavItem href="/about">{i18n.t('aboutUs')}</NavItem>
+      <NavItem onClick={() => history.push('/orders')}>{i18n.t('seeOrders')}</NavItem>
+      <NavItem onClick={() => history.push('/done')}>{i18n.t('oldOrders')}</NavItem>
+      <NavItem onClick={() => history.push('/about')}>{i18n.t('aboutUs')}</NavItem>
       <NavItem>
         <Button
           className="green darken-3"
-          onClick={() => history.push('/login')}
+          onClick={() => history.push(isAuthenticated() ? '/profile' : '/login')}
         >
-          {i18n.t('beDonator')}
+          {i18n.t(isAuthenticated() ? 'seeProfile' : 'beDonator')}
         </Button>
       </NavItem>
       <NavItem />

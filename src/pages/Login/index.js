@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button } from 'react-materialize';
 import i18n from 'i18next';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
@@ -50,7 +49,6 @@ function Login() {
 
   const handleGoogle = (response) => {
     const { accessToken, Pt } = response;
-    console.log('GOOGLE', accessToken);
     const { Ad: name, yu: email, fL: picture } = Pt;
 
     handleSocialMedia('google', accessToken, name, email, picture);
@@ -64,18 +62,13 @@ function Login() {
         <button
           type="button"
           className="login-about"
-          onClick={() => history.push('/')}
+          onClick={() => history.push('/about')}
         >
           {i18n.t('loginAboutButton')}
         </button>
       </div>
 
       <div className="social-area">
-        <div className="other-signups">
-          <Button className="green darken-3" onClick={() => history.push('/login-pj')}>
-            Empresa? Clique aqui
-          </Button>
-        </div>
 
         <div className="login-info">
           <h2>{i18n.t('loginFormTitle')}</h2>
@@ -111,6 +104,12 @@ function Login() {
               )
             }
           />
+        </div>
+
+        <div className="other-signups">
+          <Link className="green-text text-darken-3" to="/login-pj">
+            Empresa? Clique aqui
+          </Link>
         </div>
       </div>
     </div>

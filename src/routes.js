@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import SignupPj from './pages/SignupPj';
 import LoginPj from './pages/LoginPj';
+import Orders from './pages/Orders';
 import Profile from './pages/Profile';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -41,8 +42,9 @@ const Routes = () => (
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/login-pj" component={LoginPj} />
-        <PrivateRoute path="/profile" component={Profile} />
         <Route path="/signup-pj" component={SignupPj} />
+        <Route path="/orders" component={Orders} />
+        <PrivateRoute path="/profile" component={Profile} />
         <Route path="/*" component={() => <h1>Página não encontrada.</h1>} />
       </Switch>
     </App>

@@ -87,11 +87,20 @@
   width: 50%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.social-area > div:nth-child(3) > button {
+.social-area > div:nth-child(2) > button {
   margin-top: 5vh;
+}
+
+.social-area > div:nth-child(3) > a {
+  font-size: 2.5vw;
+  font-weight: bolder;
+}
+
+.social-area > div:nth-child(3) > a:hover {
+  font-size: 2.6vw;
 }
 
 .login-info {

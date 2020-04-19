@@ -1,0 +1,18 @@
+@media only screen and (max-width: 768px) {
+  div.orders-gallery {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.order-not-found {
+    margin-top: 10vw;
+    height: 60vw;
+    font-size: 7vw;
+  }
+  
+  div.order-not-found > i {
+    font-size: 14vw;
+    margin-bottom: 2vw;
+  }
+}

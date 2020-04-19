@@ -1,0 +1,66 @@
+@import './style-mobile.css';
+
+.orders-title {
+  display: flex;
+  background-color: #006633;
+  color: white;
+  -webkit-box-shadow: 0px 16px 55px -25px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 16px 55px -25px rgba(0,0,0,0.75);
+  box-shadow: 0px 16px 55px -25px rgba(0,0,0,0.75);
+}
+
+.orders-title > img {
+  width: 25vw;
+}
+
+.orders-title > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.orders-title h3 {
+  font-size: 7vw;
+  margin: 0;
+}
+
+.orders-gallery {
+  display: grid;
+  min-height: 70vh;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'c1' 'c2' 'c3';
+  padding: 5vw 0;
+}
+
+.order-not-found {
+  margin-top: 3vw;
+  height: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2vw;
+  color: #006633;
+  font-weight: bolder;
+  margin: auto;
+}
+
+.order-not-found > i {
+  font-size: 7vw;
+  margin-bottom: 2vw;
+}
+
+.order-card {
+  margin: 2vw;
+}
+
+.card-content {
+  border-bottom: solid 2px #006633;
+}
+
+.card .card-content .card-title {
+  font-weight: bolder;
+}

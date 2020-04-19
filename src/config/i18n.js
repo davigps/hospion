@@ -10,7 +10,6 @@ i18n
   .use(XHR)
   .use(LanguageDetector)
   .init({
-    debug: true,
     lng: 'pt',
     fallbackLng: 'pt',
     keySeparator: false,

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Parallax, Container, Button } from 'react-materialize';
 import i18n from 'i18next';
 
@@ -7,6 +8,8 @@ import hospital from '../../assets/hospital.jpg';
 import donation from '../../assets/donation.png';
 
 function Home() {
+  const history = useHistory();
+
   return (
     <div>
       <Parallax
@@ -30,7 +33,7 @@ function Home() {
         <div>
           <h3>Quer fazer parte disso?</h3>
           <p>Veja a lista de pedidos em aberto.</p>
-          <Button className="green darken-4">Ver Pedidos</Button>
+          <Button className="green darken-4" onClick={() => history.push('/orders')}>Ver Pedidos</Button>
         </div>
       </Container>
 
