@@ -14,6 +14,7 @@ import LoginPj from './pages/LoginPj';
 import Orders from './pages/Orders';
 import Hospital from './pages/Hospital';
 import Profile from './pages/Profile';
+import LoginHosp from './pages/LoginHosp';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -46,6 +47,7 @@ const Routes = () => (
         <Route path="/signup-pj" component={SignupPj} />
         <Route path="/orders" component={Orders} />
         <Route path="/hospital" component={Hospital} />
+        <Route path="/login-hospitals" component={LoginHosp} />
         <PrivateRoute path="/profile" component={Profile} />
         <Route path="/*" component={() => <h1>Página não encontrada.</h1>} />
       </Switch>

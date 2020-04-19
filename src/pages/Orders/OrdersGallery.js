@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
-  Card, Button,
+  Card, Button, ProgressBar,
 } from 'react-materialize';
 
 import api from '../../services/api';
@@ -60,10 +60,13 @@ function OrdersGallery({ orders }) {
       {
       orders.length === 0
         ? (
-          <div className="order-not-found">
-            <i className="fa fa-exclamation-triangle" />
-            <p>Procurando Pedidos...</p>
-          </div>
+          <>
+            <ProgressBar />
+            <div className="order-not-found">
+              <i className="fa fa-exclamation-triangle" />
+              <p>Procurando Pedidos...</p>
+            </div>
+          </>
         )
         : (
           <div className="orders-gallery">

@@ -123,7 +123,7 @@ class Hospital extends Component {
                   <h3>Essa foi a sua ajuda selecionada.</h3>
                   <Card title={orderTitle}>
                     {orderDesc}
-                    <Button className="green darken-4">
+                    <Button className="green darken-4" onClick={() => window.open('https://api.whatsapp.com/send?phone=5583986665607')}>
                       Doar
                     </Button>
                   </Card>

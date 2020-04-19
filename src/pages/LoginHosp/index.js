@@ -5,53 +5,46 @@ import { Container, TextInput, Button } from 'react-materialize';
 import './styles.css';
 
 import api from '../../services/api';
+import { login } from '../../services/auth';
 
-function SignupPj() {
+function LoginPj() {
   const history = useHistory();
 
-  const [cnpj, setCnpj] = useState('');
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPasword] = useState('');
 
-  const handleSignup = async () => {
-    await api({
+  const handleLogin = async () => {
+    localStorage.clear();
+
+    const response = await api({
       method: 'POST',
-      url: '/auth?by=cnpj',
+      url: '/login',
       data: {
-        cnpj,
-        name,
         email,
         password,
       },
     });
 
-    history.push('/login-pj');
+    const { token } = response.data;
+    const user = {
+      email,
+      type: 'hp',
+    };
+
+    login(token, user);
+
+    history.push('/');
   };
 
   return (
     <Container className="signup-pj-form">
-      <h3 style={{ color: '#006633', fontWeight: 'bolder' }}>Detalhe suas informações.</h3>
-      <TextInput
-        id="ip1"
-        icon="dvr"
-        className="signup-input"
-        onChange={(e) => setCnpj(e.target.value)}
-        placeholder="CNPJ"
-      />
-      <TextInput
-        id="ip2"
-        icon="business"
-        className="signup-input"
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Nome da Empresa"
-      />
+      <h3 style={{ color: '#006633', fontWeight: 'bolder' }}>Inicie uma nova sessão.</h3>
       <TextInput
         id="ip3"
         icon="email"
         className="signup-input"
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email para contato com a empresa"
+        placeholder="Email Registrado"
         type="email"
       />
       <TextInput
@@ -62,9 +55,11 @@ function SignupPj() {
         placeholder="Senha"
         type="password"
       />
-      <Button className="green darken-3" onClick={handleSignup}>Confirmar e Submeter</Button>
+      <div className="row pj-buttons">
+        <Button className="green darken-3" onClick={handleLogin}>Fazer LogIn</Button>
+      </div>
     </Container>
   );
 }
 
-export default SignupPj;
+export default LoginPj;

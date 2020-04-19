@@ -29,11 +29,10 @@ function Login() {
       },
     });
 
-    let { user } = response.data;
-    user = {
-      picture,
-      ...user,
+    const user = {
+      name, email, picture, type: 'pf',
     };
+
     const { token } = response.data;
 
     login(token, user);
