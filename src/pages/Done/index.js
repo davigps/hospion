@@ -30,11 +30,10 @@ function Done() {
             s={12}
           >
             <Card
-              className="green darken-1"
+              className="green darken-1 hoverable"
               closeIcon={<Icon>close</Icon>}
               revealIcon={<Icon>more_vert</Icon>}
               textClassName="white-text"
-              style={{ heigth: '100vh' }}
               title="Doação para o Hospital da Criança"
             >
               Doador: Anônimo
