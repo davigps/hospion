@@ -1,0 +1,40 @@
+.hospital-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.hospital-title-container > i {
+  margin-right: 4rem;
+}
+
+.hospital-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#root > div > div > div.hospital-header > div.row > div {
+  width: auto;
+  margin: 0 auto;
+}
+
+div.hospion-home-slogan {
+  display: flex;
+}
+
+div.hospion-home-slogan > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8vw;
+}
+
+.actual-order {
+  margin-top: 5rem;
+}
+
+.actual-order button {
+  float: right;
+}

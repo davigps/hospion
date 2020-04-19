@@ -27,5 +27,6 @@ module.exports = {
     "no-param-reassign": "off",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
+    "no-nested-ternary": "off"
   },
 };

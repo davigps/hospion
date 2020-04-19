@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
-  Card, Button, Modal, Icon,
+  Card, Button,
 } from 'react-materialize';
 
 import api from '../../services/api';
@@ -8,8 +9,9 @@ import api from '../../services/api';
 import './styles.css';
 
 function OrderCard({ order }) {
+  const history = useHistory();
+
   const [hospital, setHospital] = useState('');
-  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -29,14 +31,14 @@ function OrderCard({ order }) {
       actions={[
         <Button
           key="1"
-          to={`/hospital?id=${order.hospitalID}`}
-          className="white-text green darken-4"
+          onClick={() => history.push(`/hospital?id=${order.hospitalID}&orderId=${order.id}`)}
+          className="white-text light-green accent-4 darken-4"
         >
           Saber mais
         </Button>,
       ]}
-      className="green order-card hoverable center"
-      textClassName="white-text"
+      className="grey lighten-4 order-card hoverable center"
+      textClassName="green-text text-darken-4"
       title={order.titulo}
       key={order.id}
     >
@@ -50,27 +52,6 @@ function OrderCard({ order }) {
           {hospital.nome}
         </strong>
       </p>
-
-      <Modal
-        actions={[
-          <Button flat modal="close" node="button" waves="green" onClick={() => setModal(false)}>Fechar</Button>,
-        ]}
-        fixedFooter
-        header="Doação aprovada!"
-        className="center"
-        open={modal}
-      >
-        <Icon large>check</Icon>
-        <p>
-          A sua solicitação de doação foi aprovada, nós iremos informar a
-          a instituição escolhida!
-          {' '}
-          <br />
-          {' '}
-          Em breve, entraremos em contato com você via
-          e-mail.
-        </p>
-      </Modal>
     </Card>
   );
 }
