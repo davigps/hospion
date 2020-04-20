@@ -36,7 +36,7 @@ PrivateRoute.propTypes = {
     search: PropTypes.string,
     hash: PropTypes.string,
     key: PropTypes.string,
-  }).isRequired,
+  }),
 };
 
 const Routes = () => (

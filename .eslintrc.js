@@ -30,5 +30,6 @@ module.exports = {
     "no-nested-ternary": "off",
     "no-await-in-loop": "off",
     "no-plusplus": "off",
+    "react/require-default-props": "off",
   },
 };

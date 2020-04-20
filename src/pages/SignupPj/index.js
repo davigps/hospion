@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Container, TextInput, Button } from 'react-materialize';
+import {
+  Container, TextInput, Button, Modal, Icon,
+} from 'react-materialize';
 
 import './styles.css';
 
@@ -9,24 +11,35 @@ import api from '../../services/api';
 function SignupPj() {
   const history = useHistory();
 
+  const [error, setError] = useState('');
+  const [modal, setModal] = useState(false);
   const [cnpj, setCnpj] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPasword] = useState('');
+  const [confirmpass, setConfirmpass] = useState('');
 
   const handleSignup = async () => {
-    await api({
-      method: 'POST',
-      url: '/auth?by=cnpj',
-      data: {
-        cnpj,
-        name,
-        email,
-        password,
-      },
-    });
+    if (!(cnpj || name || email || password)) {
+      setError('Você precisa preencher todos os campos.');
+      setModal(true);
+    } else if (password !== confirmpass) {
+      setError('As senhas não correspondem.');
+      setModal(true);
+    } else {
+      await api({
+        method: 'POST',
+        url: '/auth?by=cnpj',
+        data: {
+          cnpj,
+          name,
+          email,
+          password,
+        },
+      });
 
-    history.push('/login-pj');
+      history.push('/login-pj');
+    }
   };
 
   return (
@@ -37,21 +50,21 @@ function SignupPj() {
         icon="dvr"
         className="signup-input"
         onChange={(e) => setCnpj(e.target.value)}
-        placeholder="CNPJ"
+        label="CNPJ"
       />
       <TextInput
         id="ip2"
         icon="business"
         className="signup-input"
         onChange={(e) => setName(e.target.value)}
-        placeholder="Nome da Empresa"
+        label="Nome da Empresa"
       />
       <TextInput
         id="ip3"
         icon="email"
         className="signup-input"
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email para contato com a empresa"
+        label="Email para contato com a empresa"
         type="email"
       />
       <TextInput
@@ -59,10 +72,32 @@ function SignupPj() {
         icon="lock"
         className="signup-input"
         onChange={(e) => setPasword(e.target.value)}
-        placeholder="Senha"
+        label="Senha"
+        type="password"
+      />
+      <TextInput
+        id="ip4"
+        icon="lock"
+        className="signup-input"
+        onChange={(e) => setConfirmpass(e.target.value)}
+        label="Confirmar Senha"
         type="password"
       />
       <Button className="green darken-3" onClick={handleSignup}>Confirmar e Submeter</Button>
+
+      <Modal
+        actions={[
+          <Button flat modal="close" node="button" waves="green">Ok</Button>,
+        ]}
+        fixedFooter
+        header="Atenção!"
+        open={modal}
+      >
+        <div className="error-container">
+          <Icon large>attention</Icon>
+          {error}
+        </div>
+      </Modal>
     </Container>
   );
 }

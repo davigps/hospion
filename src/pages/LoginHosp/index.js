@@ -45,7 +45,7 @@ function LoginPj() {
         icon="email"
         className="signup-input"
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email Registrado"
+        label="Email Registrado"
         type="email"
       />
       <TextInput
@@ -53,7 +53,7 @@ function LoginPj() {
         icon="lock"
         className="signup-input"
         onChange={(e) => setPasword(e.target.value)}
-        placeholder="Senha"
+        label="Senha"
         type="password"
       />
       <div className="row pj-buttons">
