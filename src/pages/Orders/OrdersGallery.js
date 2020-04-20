@@ -64,7 +64,7 @@ function OrdersGallery({ orders }) {
             <ProgressBar />
             <div className="order-not-found">
               <i className="fa fa-exclamation-triangle" />
-              <p>Procurando Pedidos...</p>
+              <p>Carregando os Pedidos...</p>
             </div>
           </>
         )
