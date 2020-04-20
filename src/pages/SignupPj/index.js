@@ -94,7 +94,7 @@ function SignupPj() {
         open={modal}
       >
         <div className="error-container">
-          <Icon large>attention</Icon>
+          <Icon large>error</Icon>
           {error}
         </div>
       </Modal>
