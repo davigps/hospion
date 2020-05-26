@@ -3,7 +3,6 @@
  <img width=300px src="./src/assets/headerLogo.png" alt="Project logo"></a>
 </p>
 
-<div align="center">
 
 ---
 
